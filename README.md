@@ -29,17 +29,9 @@ run jetty
 nodejs-app/gradlew appRun
 ```
 
-http://localhost:8080/zkembedded-demo
+## Demo Entry
 
-run tests
-```
-nodejs-app/gradlew test
-```
-
-build war
-```
-nodejs-app/gradlew war
-```
+http://localhost/demo-bootstrap.html
 
 ## License
 * Demo Code - [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
