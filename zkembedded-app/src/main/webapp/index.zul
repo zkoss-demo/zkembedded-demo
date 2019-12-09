@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <window id="win" hflex="1" vflex="1" viewModel="@id('vm') @init('zk.demo.DemoVM')">
+        <spreadsheet maxVisibleRows="200" maxVisibleColumns="40" hflex="1" vflex="1"
+            src="@bind(vm.zssSrc)" showContextMenu="true" showToolbar="@bind(vm.toolbarVisible)" showSheetbar="@bind(vm.sheetbarVisible)" showFormulabar="@bind(vm.formulabarVisible)">
+        </spreadsheet>
+    </window>
+</zk>

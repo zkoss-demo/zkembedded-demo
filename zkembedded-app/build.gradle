@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.gretty:gretty:+'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'org.gretty'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    maven { url 'https://mavensync.zkoss.org/eval' }
+    maven { url 'https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/' } // jasperreport
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile "io.keikai:keikai-pdf:${zssVersion}"
+    compile "io.keikai:keikai-ex:${zssVersion}"
+    compile "org.zkoss.zk:zul:${zkVersion}"
+    compile "org.zkoss.zk:zkmax:${zkVersion}"
+    compile "org.zkoss.theme:breeze:${zkVersion}"
+}
+
+gretty {
+    httpPort = 8080
+}
