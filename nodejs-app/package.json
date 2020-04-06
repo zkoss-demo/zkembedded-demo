@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "static app embedding zk",
+  "scripts": {
+    "server": "http-server -p 9000 .",
+    "test": "testcafe chrome:headless test-*.js",
+    "debug": "testcafe -d chrome test-minimal.js",
+    "debug2": "testcafe --inspect-brk chrome test-minimal.js",
+    "integration-test": "run-p -r server test"
+  },
+  "private": true,
+  "author": "Robert",
+  "devDependencies": {
+    "http-server": "^0.12.1",
+    "npm-run-all": "^4.1.5",
+    "testcafe": "^1.8.3"
+  }
+}

@@ -22,9 +22,8 @@ repositories {
 }
 
 dependencies {
-    compile "io.keikai:keikai-pdf:${zssVersion}"
-    compile "io.keikai:keikai-ex:${zssVersion}"
-    compile "org.zkoss.zk:zul:${zkVersion}"
+    compile "io.keikai:keikai-pdf:${keikaiVersion}"
+    compile "io.keikai:keikai-ex:${keikaiVersion}"
     compile "org.zkoss.zk:zkmax:${zkVersion}"
     compile "org.zkoss.theme:breeze:${zkVersion}"
 }

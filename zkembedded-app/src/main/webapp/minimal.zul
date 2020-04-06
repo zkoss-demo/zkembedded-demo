@@ -1,0 +1,9 @@
+<zk xmlns:w="client">
+    <window id="zkwin" title="Embedded ZK" border="normal" onCustomClientEvent="testLabel.setValue(event.getData())">
+        <label id="testLabel" value="${param.myparam}"
+               w:bind_="function() {this.$bind_.apply(this, arguments); zAu.send(new zk.Event(this, 'onCrap', 'data'));}"/>
+        <separator/>
+        <button label="Fire an event to JS"
+                onClick='Clients.evalJavaScript("calledFromZK(\"updated-from-server\")");'/>
+    </window>
+</zk>

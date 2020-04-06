@@ -1,26 +1,18 @@
-zEmbedded.load('embeddedZK', '/zkembedded-app/index.zul');
-window.addEventListener('load', function(){
-	var init = false;
-	jq('#a_load').on('click', function() {
-		if (!init) {
-			zk.afterMount(function () {
-				zkbind.$('$win').after('toClient', function (url) {
-					jq("#success-alert").fadeTo(1000, 500).slideUp(500, function() {
-						jq("#success-alert").slideUp(500);
-					});
-				});
-			});
-			init = true;
-		}
-		zkbind.$('$win').command('loadDemoXlsx');
-	});
-	jq('#a_toggleToolbar').on('click', function() {
-		zkbind.$('$win').command('toggleToolbarVisible');
-	});
-	jq('#a_toggleSheetbar').on('click', function() {
-		zkbind.$('$win').command('toggleSheetbarVisible');
-	});
-	jq('#a_toggleFormulabar').on('click', function() {
-		zkbind.$('$win').command('toggleFormulabarVisible');
-	});
-});
+zEmbedded.load('embeddedZK', 'http://localhost:8080/zkembedded-app/index.zul')
+    .then(function({widget}) {
+        const binder = zkbind.$(widget);
+
+        jq('#a_load').on('click', () => {
+            binder.command('loadDemoXlsx');
+            binder.after('toClient', function toClientHandler (url) {
+                jq("#success-alert").fadeIn(1000).slideUp(500);
+                binder.unAfter('toClient', toClientHandler);
+            });
+        });
+        jq('#a_toggleToolbar').on('click', () => binder.command('toggleToolbarVisible'));
+        jq('#a_toggleSheetbar').on('click', () => binder.command('toggleSheetbarVisible'));
+        jq('#a_toggleFormulabar').on('click', () => binder.command('toggleFormulabarVisible'));
+    })
+    .catch(function(reason) {
+        console.error("error", this, arguments);
+    });

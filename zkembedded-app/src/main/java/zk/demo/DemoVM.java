@@ -10,45 +10,29 @@ import org.zkoss.bind.annotation.ToServerCommand;
 /**
  * @author jameschu
  */
-@NotifyCommand(value = "toClient", onChange = "_vm_.zssSrc")
+@NotifyCommand(value = "toClient", onChange = "_vm_.workbookSrc")
 @ToClientCommand("toClient")
 @ToServerCommand({"loadDemoXlsx", "toggleToolbarVisible", "toggleSheetbarVisible", "toggleFormulabarVisible"})
 public class DemoVM {
-	String zssSrc = "/book/blank.xlsx";
-	boolean toolbarVisible = true;
-	boolean sheetbarVisible = true;
-	boolean formulabarVisible = true;
+	private String workbookSrc = "/book/blank.xlsx";
+	private boolean toolbarVisible = true;
+	private boolean sheetbarVisible = true;
+	private boolean formulabarVisible = true;
 
-	public String getZssSrc() {
-		return zssSrc;
-	}
-
-	public void setZssSrc(String zssSrc) {
-		this.zssSrc = zssSrc;
+	public String getWorkbookSrc() {
+		return workbookSrc;
 	}
 
 	public boolean isToolbarVisible() {
 		return toolbarVisible;
 	}
 
-	public void setToolbarVisible(boolean toolbarVisible) {
-		this.toolbarVisible = toolbarVisible;
-	}
-
 	public boolean isSheetbarVisible() {
 		return sheetbarVisible;
 	}
 
-	public void setSheetbarVisible(boolean sheetbarVisible) {
-		this.sheetbarVisible = sheetbarVisible;
-	}
-
 	public boolean isFormulabarVisible() {
 		return formulabarVisible;
-	}
-
-	public void setFormulabarVisible(boolean formulabarVisible) {
-		this.formulabarVisible = formulabarVisible;
 	}
 
 	@Command
@@ -57,10 +41,11 @@ public class DemoVM {
 	}
 
 	@Command
-	@NotifyChange("zssSrc")
+	@NotifyChange("workbookSrc")
 	public void loadDemoXlsx() {
-		zssSrc = "/book/demo_sample.xlsx";
+		workbookSrc = "/book/demo_sample.xlsx";
 	}
+
 	@Command
 	@NotifyChange("toolbarVisible")
 	public void toggleToolbarVisible() {
@@ -72,8 +57,6 @@ public class DemoVM {
 	public void toggleSheetbarVisible() {
 		sheetbarVisible = !sheetbarVisible;
 	}
-
-
 
 	@Command
 	@NotifyChange("formulabarVisible")

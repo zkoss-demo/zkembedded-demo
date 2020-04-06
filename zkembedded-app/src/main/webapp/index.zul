@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zk>
-    <window id="win" hflex="1" vflex="1" viewModel="@id('vm') @init('zk.demo.DemoVM')">
-        <spreadsheet maxVisibleRows="200" maxVisibleColumns="40" hflex="1" vflex="1"
-            src="@bind(vm.zssSrc)" showContextMenu="true" showToolbar="@bind(vm.toolbarVisible)" showSheetbar="@bind(vm.sheetbarVisible)" showFormulabar="@bind(vm.formulabarVisible)">
+    <window id="win" height="100%" viewModel="@id('vm') @init('zk.demo.DemoVM')">
+        <spreadsheet vflex="1"
+                     maxVisibleRows="200" maxVisibleColumns="40" showContextMenu="true"
+                     src="@load(vm.workbookSrc)"
+                     showToolbar="@load(vm.toolbarVisible)"
+                     showSheetbar="@load(vm.sheetbarVisible)"
+                     showFormulabar="@load(vm.formulabarVisible)">
         </spreadsheet>
     </window>
 </zk>
