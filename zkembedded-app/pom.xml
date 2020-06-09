@@ -25,8 +25,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <zk.version>9.0.1.FL.20200330-Eval</zk.version>
-        <kk.version>5.1.1-Eval</kk.version>
+        <zk.version>9.2.0.FL.20200608-Eval</zk.version>
+        <kk.version>5.3.0.FL.20200608-Eval</kk.version>
     </properties>
 
     <dependencies>
@@ -58,13 +58,13 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.27.v20200227</version>
+                <version>9.4.29.v20200521</version>
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
                     <webApp>
-                        <contextPath>/zkembedded-app</contextPath>
+<!--                        <contextPath>/zkembedded-app</contextPath>-->
                     </webApp>
                 </configuration>
                 <executions>
