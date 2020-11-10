@@ -25,8 +25,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <zk.version>9.2.0.FL.20200608-Eval</zk.version>
-        <kk.version>5.3.0.FL.20200608-Eval</kk.version>
+        <zk.version>9.5.0.1-Eval</zk.version>
+        <kk.version>5.5.0-Eval</kk.version>
     </properties>
 
     <dependencies>
@@ -64,7 +64,7 @@
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
                     <webApp>
-<!--                        <contextPath>/zkembedded-app</contextPath>-->
+                        <contextPath>/zkembedded-app</contextPath>
                     </webApp>
                 </configuration>
                 <executions>
