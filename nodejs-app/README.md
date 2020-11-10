@@ -1,9 +1,10 @@
 # ZK Embedded Demo - nodejs app
 
-Run node
+Start a server
 ```
-node app.js
+npm run server
 ```
+Configured in package.json
 
 ## License
 * Demo Code - [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
