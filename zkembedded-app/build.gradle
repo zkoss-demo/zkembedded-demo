@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.gretty:gretty:+'
+        classpath 'org.gretty:gretty:3.1.1'
     }
 }
 
@@ -22,10 +22,11 @@ repositories {
 }
 
 dependencies {
-    compile "io.keikai:keikai-pdf:${keikaiVersion}"
-    compile "io.keikai:keikai-ex:${keikaiVersion}"
-    compile "org.zkoss.zk:zkmax:${zkVersion}"
-    compile "org.zkoss.theme:breeze:${zkVersion}"
+    implementation "io.keikai:keikai-pdf:${keikaiVersion}"
+    implementation "io.keikai:keikai-ex:${keikaiVersion}"
+    implementation "org.zkoss.zk:zkmax:${zkVersion}"
+    implementation "org.zkoss.theme:breeze:${zkVersion}"
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
 }
 
 gretty {
